@@ -155,7 +155,7 @@ pub fn run_app() {
             StateFlags::FULLSCREEN
         } else {
             // Prevent flickering on the first open.
-            StateFlags::all() & !StateFlags::VISIBLE
+            StateFlags::POSITION | StateFlags::SIZE
         })
         .build();
 
