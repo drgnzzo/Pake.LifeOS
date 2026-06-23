@@ -351,6 +351,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // F11 alterna pantalla completa real (cubre barra de Windows y barra superior)
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "F11") {
+      event.preventDefault();
+      appWindow.isFullscreen().then((fullscreen) => {
+        appWindow.setFullscreen(!fullscreen);
+      });
+    }
+  });
+
   document.addEventListener(
     "paste",
     (event) => {
